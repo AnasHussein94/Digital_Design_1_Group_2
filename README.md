@@ -5,39 +5,54 @@ Group Members
 * **Member 2:** Anas Hussein Babutain
 * **Member 3:** 
 
+# Quine-McCluskey Logic Minimization
+
 ## Project Description
-# Quine-McCluskey Logic Minimizer & Verilog Generator
+A C/C++ program that implements the **Quine-McCluskey algorithm** to minimize Boolean functions with up to 20 variables. The program reads Boolean functions from a text file, validates the input, and generates minimized expressions.
 
-## Project Overview
-This software application implements the **Quine-McCluskey (QM) algorithm** in C/C++ to minimize Boolean functions with up to **20 input variables**. The program parses function specifications from an input text file, identifies all Prime Implicants (PIs) and Essential Prime Implicants (EPIs), solves the PI table for minimal Sum-of-Products (SOP) expressions, converts the output to NAND-only logic, and generates corresponding Verilog structural modules using Verilog primitives.
+## Features
+- Read and validate Boolean functions from an input file.
+- Support minterms, maxterms, and don't-care terms.
+- Generate and display all prime implicants (PIs).
+- Identify essential prime implicants (EPIs).
+- Solve the prime implicant table and find all possible minimized expressions.
+- Convert minimized expressions into NAND-only implementations.
+- **Bonus:** Generate Verilog modules using Verilog primitives.
+- Handle invalid inputs and report errors.
 
----
+## Input Format
+The input file must contain three lines:
 
-## Key Features
-1. **Input File Parsing & Validation:** 
-   * Reads 3-line input files containing variable counts, minterms (`m`) or maxterms (`M`), and don't-care terms (`d`).
-   * Performs complete input validation and error handling for up to 20 variables.
-2. **Prime Implicant (PI) Generation:** 
-   * Generates and prints all PIs along with their binary representations and covered minterm/don't-care indices.
-3. **Essential Prime Implicant (EPI) Extraction:** 
-   * Identifies EPIs, formats them as Boolean expressions, and reports un-covered minterms.
-4. **PI Table Reduction & Minimization:** 
-   * Solves the PI table to find all minimal Sum-of-Products (SOP) Boolean expressions.
-5. **NAND Conversion:** 
-   * Converts minimal SOP Boolean expressions to equivalent **NAND-only** expressions.
-6. **Verilog Module Generation (Bonus):** 
-   * Automatically generates a Verilog module (`.v`) implementing the minimized logic using Verilog gate primitives (`nand`, `and`, `or`, `not`).
+1. Number of variables.
+2. Minterms (`m`) or maxterms (`M`), separated by commas.
+3. Don't-care terms (`d`), separated by commas.
 
----
-
-## Input File Format
-The program reads input from a text file with strictly **3 lines**:
-1. **Line 1:** Number of input variables ($N \le 20$).
-2. **Line 2:** Comma-separated minterms (e.g., `m1,m3,m6,m7`) or maxterms (e.g., `M1,M3,M6,M7`).
-3. **Line 3:** Comma-separated don't-care terms (e.g., `d0,d5`).
-
-### Example (`input.txt`)
+**Example:**
 ```text
 3
 m1,m3,m6,m7
 d0,d5
+```
+
+This represents a Boolean function with 3 variables, minterms 1, 3, 6, and 7, and don't-care terms 0 and 5.
+
+## Project Structure
+```text
+Quine-McCluskey/
+├── src/          # Source code
+├── tests/        # Test cases
+├── README.md     # Project documentation
+└── report.pdf    # Project report
+```
+
+## Building and Running
+Build instructions and usage examples will be added here.
+
+## Testing
+The program will be tested using 10 test cases covering the main features, including input validation, prime implicant generation, minimization, and NAND-only conversion.
+
+## Team Contributions
+Each group member's contributions will be documented in the project report.
+
+## Development
+The project is developed collaboratively using GitHub for version control and tracking progress.
